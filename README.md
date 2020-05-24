@@ -11,16 +11,18 @@ ties = 0
 
 file1 = open("YOUR DIRECTORY","r")
 
+# INSTEAD OF SEVERAL CONDITIONS, LET'S USE A RESULTS MATRIX,  T IS FOR TIE, W IS FOR PLAYER WIN, L IS FOR PLAYER LOSS
 resolution = np.array((["T", "L", "W"], ["W", "T", "L"], ["L", "W", "T"]))
 
-
-totalLines = 0
-i =0
-
+# THE CHOICES ARE IN A LIST, SO THE PLAYER AND THE MACHINE CHOOSE THE POSITION OF THEIR ANSWER IN THIS LIST
 options = ["Stone", "Paper", "Scissors"]
 
+
+# THE FILE WITH THE PLAYER CHOICES
 fileRounds = open("YOUR DIRECTOTY FOR THE NEW FILE", "a")
 
+
+# THESE ARE THE FUNCTIONS TO DISPLAY THE RESULTS
 def rounds(winner):
 
     fileRounds.write("At the round {},{}\n".format(totalLines, winner))
@@ -37,6 +39,20 @@ def finalResults ():
             "\n The player has got {} victories"
             "\n La maquina tiene {} victorias"
             "\n There have been {} ties".format(victoryPlayer, victoryMachine, ties))
+
+'''
+IT COUNTS THE TOTAL AMOUNT OF PLAYER CHOICES IN THE FILE AND DETERMINES HOW MANY ROUND THERE WILL BE.
+
+IT READS EACH LINE AS A NUMBER FOR THE MATRIX ROW POSITION, THE MACHINE PICKS A RANDOM NUMBER FROM 0 T 2 AND IT OCCURS THE SAME
+
+THEN, WITH BOTH RESPONSES CHECK THE VALUE OF THE POSITION IN THE MATRIX AND FALLS INTO A CERTAIN CONDITION
+
+WITH EVERY GAME, THE VICTORY COUNTER ARE UPDATED UNTIL THE LOOP IS DONE
+
+'''
+
+totalLines = 0
+i =0
 
 for i in file1:
     totalLines +=1
@@ -65,6 +81,7 @@ for i in file1:
         ties +=1
         rounds(winner="there has been a tie")
 
+# IT'S TIME TO DISPLAY THE RESULTS!
 
 finalResults()
 
