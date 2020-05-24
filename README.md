@@ -6,13 +6,14 @@ The used IDE is PyCharm
 The logic behind: instead of creating several conditions, I created a matrix with the results of the iteration:
 
                           machine
-                   _______________________
-                   _Stone__Paper__Scissors__
-        ¦ Stone   ¦  T     ¦   L  ¦    W    ¦
-player  ¦Paper    ¦  W     ¦   T  ¦    L    ¦
-        ¦Scissors ¦  L     ¦   W  ¦    T    ¦
+              
+                         Stone  _Paper  _Scissors
+                   
+player         Stone   ¦  T     ¦   L  ¦    W    ¦
+        
+player        Paper    ¦  W     ¦   T  ¦    L    ¦
 
-
+player        Scissors ¦  L     ¦   W  ¦    T    ¦
 
 
 "W" , player wins
