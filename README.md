@@ -9,7 +9,7 @@ ties = 0
 
 
 
-file1 = open("/Users/JoseManuelChustBalag/Desktop/REQUESTS/BP channel/Decisions.txt","r")
+file1 = open("YOUR DIRECTORY","r")
 
 resolution = np.array((["T", "L", "W"], ["W", "T", "L"], ["L", "W", "T"]))
 
@@ -19,7 +19,7 @@ i =0
 
 options = ["Stone", "Paper", "Scissors"]
 
-fileRounds = open("/Users/JoseManuelChustBalag/Desktop/REQUESTS/BP channel/Rondas.txt", "a")
+fileRounds = open("YOUR DIRECTOTY FOR THE NEW FILE", "a")
 
 def rounds(winner):
 
