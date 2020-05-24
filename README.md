@@ -1,14 +1,11 @@
 # Stone-Scissor-Paper
-As a journey into coding and data science, I want to develop some basic AI to play against
-
-The used IDE is PyCharm
 
 from random import randint
 import numpy as np
 
-victoriaPlayer = 0
-victoriaMaquina = 0
-empates = 0
+victoryPlayer = 0
+victoryMachine = 0
+ties = 0
 
 
 
@@ -17,60 +14,60 @@ file1 = open("/Users/JoseManuelChustBalag/Desktop/REQUESTS/BP channel/Decisions.
 resolution = np.array((["T", "L", "W"], ["W", "T", "L"], ["L", "W", "T"]))
 
 
-totalLinias = 0
+totalLines = 0
 i =0
 
 options = ["Stone", "Paper", "Scissors"]
 
-ficheroRondas = open("/Users/JoseManuelChustBalag/Desktop/REQUESTS/BP channel/Rondas.txt","a")
+fileRounds = open("/Users/JoseManuelChustBalag/Desktop/REQUESTS/BP channel/Rondas.txt", "a")
 
-def Rondas(ganador):
+def rounds(winner):
 
-    ficheroRondas.write("At the round {},{}\n".format(totalLinias,ganador))
+    fileRounds.write("At the round {},{}\n".format(totalLines, winner))
 
 
-def ResultadosFinales ():
+def finalResults ():
     print("The final results are:"
             "\n The player has got {} victories"
             "\n The machines has got {} victories"
-            "\n There have been {} ties".format(victoriaPlayer, victoriaMaquina,empates))
+            "\n There have been {} ties".format(victoryPlayer, victoryMachine, ties))
 
-    ficheroRondas.write("\n \n "
+    fileRounds.write("\n \n "
             "\nThe final results are:"
             "\n The player has got {} victories"
             "\n La maquina tiene {} victorias"
-            "\n There have been {} ties".format(victoriaPlayer, victoriaMaquina,empates))
+            "\n There have been {} ties".format(victoryPlayer, victoryMachine, ties))
 
 for i in file1:
-    totalLinias +=1
+    totalLines +=1
     player = int(i)
 
     playerOption = options[player]
 
-    maquina = randint(0,2)
-    maquinaOption = options[maquina]
+    machineAI = randint(0, 2)
+    machineChoice = options[machineAI]
 
     print("The player chose {}".format(playerOption))
-    print ("The machine chose {}".format(maquinaOption))
+    print ("The machine chose {}".format(machineChoice))
 
-    if resolution[player,maquina] =="W":
+    if resolution[player, machineAI] == "W":
         print("Player wins")
-        victoriaPlayer += 1
-        Rondas(ganador = "has won this round")
+        victoryPlayer += 1
+        rounds(winner="has won this round")
 
-    elif resolution[player,maquina] =="L":
+    elif resolution[player, machineAI] == "L":
         print("Machine wins")
-        victoriaMaquina += 1
-        Rondas( ganador="has won this round")
+        victoryMachine += 1
+        rounds(winner="has won this round")
 
     else:
         print ("TIE")
-        empates +=1
-        Rondas(ganador="there has been a tie")
+        ties +=1
+        rounds(winner="there has been a tie")
 
 
-ResultadosFinales()
+finalResults()
 
 file1.close()
 
-ficheroRondas.close()
+fileRounds.close()
