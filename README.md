@@ -12,6 +12,9 @@ The logic behind: instead of creating several conditions, I created a matrix wit
 player  ¦Paper    ¦  W     ¦   T  ¦    L    ¦
         ¦Scissors ¦  L     ¦   W  ¦    T    ¦
 
+
+
+
 "W" , player wins
 
 "L" , machine wins
